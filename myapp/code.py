@@ -80,6 +80,7 @@ def scrap1(ur):
                             break   
         return var1
 def image1(var1):
+    img=' '
     newReq=requests.get(var1)
     newSoup=BeautifulSoup(newReq.text,'html.parser')
     for ne in newSoup.find_all(class_='imgTagWrapper'):
@@ -96,6 +97,7 @@ def title1(var1):
     return fin
 def price3(var1):
     #base price
+    pr=' '
     rdreq=requests.get(var1)
     suop=BeautifulSoup(rdreq.text,'html.parser')
     for price in suop.find_all(class_='a-text-strike'):
@@ -103,6 +105,7 @@ def price3(var1):
     return pr
 def price4(var1):
     #amazon price
+    fin1=' '
     dreq=requests.get(var1)
     suo=BeautifulSoup(dreq.text,'html.parser')
     for pric in suo.find_all(id='priceblock_ourprice',class_='a-size-medium a-color-price'):

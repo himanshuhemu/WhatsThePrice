@@ -8,31 +8,36 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
 
 </head>
-<body>
-        <form  method='POST' align="center" class="form-group " > 
+<body style="background-color:#d5f4e6;">
+        <h1 align="center" style="color: #d64161; background :#eca1a6;">What's The Price</h1><br>
+        <form  method='POST' align="center" class=" " > 
                 {{key.as_p}}
                 {% csrf_token %}
                 <input type="submit" class="btn btn-success btn-sm " value='submit'>
         
         
-        </form> <div id="wrap" style="position:relative;"> 
-                <div id="left" style="margin-right:700px;border:1px solid red;size:fix;">
-                        the product name is :{{x}}
+        </form> <div id="wrap" style="position:relative; "> 
+                <div id="left" style="margin-right:650px;background :  #cfe0e8;">
+                <h2 align="center" style="color:#622569; background:#b8a9c9;" >Flipkart</h2>
                 <br>
-                <img src='{{a}}' alt=" ">
+                        Product Name  : {{x}}
                 <br>
-                 the base price is : {{y}}
+                <img style="width:200px;height:200px" src='{{a}}' alt="Sorry Image Is Not Available ">
                 <br>
-                 the flipkart price is :{{z}}       
+                 Base Price : {{y}}
+                <br>
+                 Flipkart Price : {{z}}       
                 </div>
-                <div  id="right" style="position:absolute;width:600px;right:0;top:0;border:1px solid blue;">
-                 the product name is : {{x1}}
-                 <br>
-                 <img src='{{a1}}' alt=" ">
-                 <br>
-                  the base price is : {{y1}}
-                 <br>
-                  the amazon price is :{{z1}}       
+                <div  id="right" style="position:absolute;width:645px;right:0;top:0;background :  #cfe0e8;">
+                                <h2 align="center"style="color:#622569; background:#b8a9c9;">Amazon</h2>
+                <br>
+                                Product Name  : {{x1}}
+                <br>
+                <img style="height:200px" src='{{a1}}' alt="Sorry Image Is Not Available ">
+                <br>
+                  Base Price : {{y1}}
+         <br>
+                   Amazon Price : {{z1}}       
                  <br>
                  </div>
                  </div>
