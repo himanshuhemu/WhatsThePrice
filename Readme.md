@@ -1,8 +1,12 @@
 # WhatsThePrice
 ![Alt text](https://github.com/himanshuhemu/WhatsThePrice/raw/master/Screenshot%20from%202018-09-27%2021-08-05.png)
+
 ![Alt text](https://github.com/himanshuhemu/WhatsThePrice/raw/master/Screenshot%20from%202018-09-27%2021-10-40.png)
+
 ![Alt text](https://github.com/himanshuhemu/WhatsThePrice/raw/master/Screenshot%20from%202018-09-27%2021-11-48.png)
+
 ![Alt text](https://github.com/himanshuhemu/WhatsThePrice/raw/master/Screenshot%20from%202018-09-27%2021-09-15.png)
+
 ![Alt text](https://github.com/himanshuhemu/WhatsThePrice/raw/master/Screenshot%20from%202018-09-27%2021-17-22.png)
 
 WhatsThePrice is now deployed , The link is : http://whatstheprice.herokuapp.com/
