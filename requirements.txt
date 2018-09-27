@@ -1,0 +1,63 @@
+# asn1crypto==0.24.0
+# beautifulsoup4==4.6.0
+# bs4==0.0.1
+# certifi==2018.4.16
+# cffi==1.11.5
+# chardet==3.0.4
+# cryptography==2.2.2
+# dj-database-url==0.5.0
+# Django==2.0.5
+# idna==2.7
+# psycopg2==2.7.5
+# pycparser==2.18
+# PyQt5==5.10.1r
+# python-decouple==3.1
+# pytz==2018.4
+# requests==2.19.1
+# sip==4.19.8
+# six==1.11.0
+# urllib3==1.23
+# waitress==1.1.0
+# whitenoise==4.0
+# wincertstore==0.2
+# gunicorn==19.0.0
+# et-xmlfile==1.0.1
+# h5py==2.7.1
+# heapdict==1.0.0
+# html5lib==1.0.1
+# hyperlink==18.0.0
+# lxml==4.2.1
+# parso==0.2.0
+beautifulsoup4==4.6.0
+bitarray==0.8.1
+Bottleneck==1.2.1
+certifi==2018.4.16
+cffi==1.11.5
+chardet==3.0.4
+cssselect==1.0.3
+cssutils==1.0.2
+Django==2.1.1
+et-xmlfile==1.0.1
+fastcache==1.0.2
+h5py==2.7.1
+html5lib==1.0.1
+hyperlink==18.0.0
+lxml==4.2.1
+MarkupSafe==1.0
+
+msgpack-python==0.5.6
+networkx==2.1
+openpyxl==2.5.3
+packaging==17.1
+parsel==1.5.0
+parso==0.2.0
+pycparser==2.18
+pyOpenSSL==18.0.0
+pyparsing==2.2.0
+queuelib==1.5.0
+requests==2.18.4
+Scrapy==1.5.1
+urllib3==1.22
+w3lib==1.19.0
+webencodings==0.5.1
+gunicorn==19.0.0

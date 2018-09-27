@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>main</title>
+    <title>WhatsThePrice</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
 
 </head>
@@ -16,32 +16,45 @@
                 <input type="submit" class="btn btn-success btn-sm " value='submit'>
         
         
-        </form> <div id="wrap" style="position:relative; "> 
-                <div id="left" style="margin-right:650px;background :  #cfe0e8;">
-                <h2 align="center" style="color:#622569; background:#b8a9c9;" >Flipkart</h2>
-                <br>
-                        Product Name  : {{x}}
-                <br>
-                <img style="width:200px;height:200px" src='{{a}}' alt="Sorry Image Is Not Available ">
-                <br>
-                 Base Price : {{y}}
-                <br>
-                 Flipkart Price : {{z}}       
+        </form>  
+        <div class="row">
+                <div class="col" >
+                                
+                <div  class="card" style="background :  #cfe0e8;">
+                                <h2 align="center" style="color:#622569; background:#b8a9c9;">Amazon</h2>
+                                <br>
+                                                Product Name  : {{x1}}
+                                <br>
+                                <img style="width:150px"  src='{{a1}}' alt="Sorry Image Is Not Available ">
+                                <br>
+                                Base Price : {{y1}}
+                                <br>
+                                Amazon Price : {{z1}}
+                        </div>                
                 </div>
-                <div  id="right" style="position:absolute;width:645px;right:0;top:0;background :  #cfe0e8;">
-                                <h2 align="center"style="color:#622569; background:#b8a9c9;">Amazon</h2>
-                <br>
-                                Product Name  : {{x1}}
-                <br>
-                <img style="height:200px" src='{{a1}}' alt="Sorry Image Is Not Available ">
-                <br>
-                  Base Price : {{y1}}
-         <br>
-                   Amazon Price : {{z1}}       
-                 <br>
-                 </div>
-                 </div>
-        
+                 <div class="col">       
+                <div class='card' style="background :#cfe0e8;">
+                                <h2 align="center" style="color:#622569; background:#b8a9c9;" >Flipkart</h2>
+                                <br>
+                                        Product Name  : {{x}}
+                                <br>
+                                <img style="width:150px" src='{{a}}' alt="Sorry Image Is Not Available ">
+                                <br>
+                                Base Price : {{y}}
+                                <br>
+                                Flipkart Price : {{z}}       
+                        </div>
+                </div>
+        </div>
  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>               
+<div align="center">
+
+        <h3 >Made by Himanshu & Dinesh </h3>
+
+</div>
+<h4>Note :</h4>
+<h5>*Please refresh the page a few times ,  if getting error</h5>
+<h5>*To get the desired results please search for specific product , For Eg. Mi Band Hrx Edition , SanDisk 3.0 Pen Drive </h5>
+<h5>*If the Product is not available on both E-comm sites then the results may be different </h5>
 </body>
 </html>

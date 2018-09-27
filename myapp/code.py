@@ -6,6 +6,7 @@ def inpu(search_text):
         url="https://www.flipkart.com/search?q="+newText
         return url
 def scrap(url):
+      var=' '
       req=requests.get(url)
       soupe = BeautifulSoup(req.text,'html.parser')  
       #finding the link of first item
@@ -19,35 +20,26 @@ def scrap(url):
 def image(var):
     newReq=requests.get(var)
     newSoup=BeautifulSoup(newReq.text,'html.parser')
-    i=[]
-    count=0
-    for n in newSoup.find_all('img'):
-        i.append(n['src'])
-        for t in i:
-            if 'https' in t.split(':'):
-                count+=1
-                if(count==2):
-                    return t
+    data = newSoup.findAll('div',attrs={'class':'_2_AcLJ'})
+    for div in data:
+        lnk=div['style']
+        lnk=lnk.split('(')[1][:-1]
+        break  
+    return lnk,newSoup
 
 
 #getting name of product
     
-def  title(var):
-    ndreq=requests.get(var)
-    soop=BeautifulSoup(ndreq.text,'html.parser')
-    for tex in soop.find_all(class_='_35KyD6'):
+def  title(var,newsoup):
+    for tex in newsoup.find_all(class_='_35KyD6'):
         fin=tex.text
         return fin 
 #getting the base price
-def price(var):
-    rdreq=requests.get(var)
-    suop=BeautifulSoup(rdreq.text,'html.parser')
-    for price in suop.find_all(class_='_3auQ3N _1POkHg'):
+def price(var,newsoup):
+    for price in newsoup.find_all(class_='_3auQ3N _1POkHg'):
         return price.text
-def price2(var):
-    dreq=requests.get(var)
-    suo=BeautifulSoup(dreq.text,'html.parser')
-    for pric in suo.find_all(class_='_1vC4OE _3qQ9m1'):
+def price2(var,newsoup):
+    for pric in newsoup.find_all(class_='_1vC4OE _3qQ9m1'):
         return pric.text        
 
 
@@ -59,55 +51,68 @@ def inpu1(srh_txt):
     newText=srh_txt.replace(' ', '+')
     ur="https://www.amazon.in/s/ref=nb_sb_noss_2?url=search-alias%3Daps&field-keywords="+newText
     return ur 
+
 def scrap1(ur):
         var1=' '
-        req=requests.get(ur)
-        soup = BeautifulSoup(req.text,'html.parser')
-        
-        for link in soup.find_all(attrs={'class': 'a-row a-spacing-none'}):
-            for a in link.find_all('a', href=True):
-                var1= a['href']      
-            break
-        if(var1==' '):
-            l=[]
-            var1=' '
-            for link in soup.find_all(class_='a-row a-spacing-mini'):
-                for a in link.find_all('a', href=True):
-                    l.append(a['href'])
-                    for i in l:
-                        if 'https' in i.split(':'):
-                            var1=i
-                            break   
+        headers = {'User-agent': 'Mozilla/5.0 (Windows NT 6.2; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2062.120 Safari/537.36'}
+        r = requests.get(ur, headers=headers)
+        soup = BeautifulSoup(r.content, "lxml") 
+        counter=0
+        data = soup.findAll('div',attrs={'class':'a-row a-spacing-none'})
+        for div in data:
+            links = div.findAll('a')
+            for a in links:
+                if "https://" in a['href'] and "spons" not in a['href']:
+                   counter+=1
+                   if(counter==1):
+                        var1=a['href'] 
         return var1
 def image1(var1):
     img=' '
-    newReq=requests.get(var1)
-    newSoup=BeautifulSoup(newReq.text,'html.parser')
-    for ne in newSoup.find_all(class_='imgTagWrapper'):
-       for link in ne.find_all('img',src=True):
-             img=link['src']
+    headers = {'User-agent': 'Mozilla/5.0 (Windows NT 6.2; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2062.120 Safari/537.36'}
+    newr = requests.get(var1, headers=headers)
+    newsoup = BeautifulSoup(newr.content, "lxml")
+    data = newsoup.findAll('div',attrs={'class':'imgTagWrapper'})
+    for div in data:
+        links = div.findAll('img')
+        for a in links:
+            img = a['data-old-hires']
+        if "https://" not in img :
+            for div in data:
+                links = div.findAll('img')
+                for a in links:
+                    lnk=a['data-a-dynamic-image']
+                    img=lnk.split(':[')[0][2:-1]  
+            
     return img
 def title1(var1):
+    headers = {'User-agent': 'Mozilla/5.0 (Windows NT 6.2; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2062.120 Safari/537.36'}
+    newr = requests.get(var1, headers=headers)
+    newsoup = BeautifulSoup(newr.content, "lxml")
+    
     fin=' '
-    ndreq=requests.get(var1)
-    soop=BeautifulSoup(ndreq.text,'html.parser')
-    for tex in soop.find_all('h1',class_='a-size-large'):
+    for tex in newsoup.find_all('h1',class_='a-size-large'):
         fin=tex.text
-        fin=fin.strip()            
+        fin=fin.strip()
+        break
     return fin
 def price3(var1):
     #base price
+    headers = {'User-agent': 'Mozilla/5.0 (Windows NT 6.2; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2062.120 Safari/537.36'}
+    newr = requests.get(var1, headers=headers)
+    newsoup = BeautifulSoup(newr.content, "lxml")
+    
     pr=' '
-    rdreq=requests.get(var1)
-    suop=BeautifulSoup(rdreq.text,'html.parser')
-    for price in suop.find_all(class_='a-text-strike'):
+    for price in newsoup.find_all(class_='a-text-strike'):
         pr=price.text
     return pr
 def price4(var1):
+    headers = {'User-agent': 'Mozilla/5.0 (Windows NT 6.2; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2062.120 Safari/537.36'}
+    newr = requests.get(var1, headers=headers)
+    newsoup = BeautifulSoup(newr.content, "lxml")
+    
     #amazon price
     fin1=' '
-    dreq=requests.get(var1)
-    suo=BeautifulSoup(dreq.text,'html.parser')
-    for pric in suo.find_all(id='priceblock_ourprice',class_='a-size-medium a-color-price'):
+    for pric in newsoup.find_all(id='priceblock_ourprice',class_='a-size-medium a-color-price'):
        fin1 = pric.text       
     return fin1    
