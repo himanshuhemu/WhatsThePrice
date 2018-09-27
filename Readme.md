@@ -9,7 +9,6 @@
 
 ![Alt text](https://github.com/himanshuhemu/WhatsThePrice/raw/master/Screenshot%20from%202018-09-27%2021-17-22.png)
 
-WhatsThePrice is now deployed , The link is : http://whatstheprice.herokuapp.com/
 
 A Web App that lets you compare the price of a product on Amazon and Flipkart ,so that you get the best deal . It is achieved using Web Scraping and the web app is built on Django Framework . 
 
