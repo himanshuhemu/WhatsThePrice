@@ -13,5 +13,5 @@
 A Web App that lets you compare the price of a product on Amazon and Flipkart ,so that you get the best deal . It is achieved using Web Scraping and the web app is built on Django Framework . 
 
 *As it is hosted on heroku servers with ip of US , hence sometimes you may get error , so to try this out clone the repo and then run locally on your system to get it working
-
+*Moreover Amazon and Flipkart frequently keeps updating their interfaces due to which the web scrapping may fail .
  
