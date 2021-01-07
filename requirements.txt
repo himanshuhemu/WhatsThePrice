@@ -26,7 +26,7 @@
 # heapdict==1.0.0
 # html5lib==1.0.1
 # hyperlink==18.0.0
-# lxml==4.2.1
+# lxml==4.6.2
 # parso==0.2.0
 beautifulsoup4==4.6.0
 bitarray==0.8.1
@@ -42,7 +42,7 @@ fastcache==1.0.2
 h5py==2.7.1
 html5lib==1.0.1
 hyperlink==18.0.0
-lxml==4.2.1
+lxml==4.6.2
 MarkupSafe==1.0
 
 msgpack-python==0.5.6
