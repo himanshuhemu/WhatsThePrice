@@ -1,7 +1,7 @@
 # asn1crypto==0.24.0
 # beautifulsoup4==4.6.0
 # bs4==0.0.1
-# certifi==2018.4.16
+# certifi==2022.12.7
 # cffi==1.11.5
 # chardet==3.0.4
 # cryptography==2.2.2
@@ -31,7 +31,7 @@
 beautifulsoup4==4.6.0
 bitarray==0.8.1
 Bottleneck==1.2.1
-certifi==2018.4.16
+certifi==2022.12.7
 cffi==1.11.5
 chardet==3.0.4
 cssselect==1.0.3
